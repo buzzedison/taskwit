@@ -1,3 +1,4 @@
+require("dotenv").config()
 module.exports = {
   siteMetadata: {
     title: `Taskwit Jobs and Courses`,
@@ -31,19 +32,10 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
     {
-      resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
+      resolve: `gatsby-source-contentful`,
       options: {
-        // Fields to index
-        fields: [`title`, `tags`],
-        // How to resolve each field`s value for a supported node type
-        resolvers: {
-          // For any node of type MarkdownRemark, list how to resolve the fields` values
-          MarkdownRemark: {
-            title: node => node.frontmatter.title,
-            tags: node => node.frontmatter.tags,
-            path: node => node.frontmatter.path,
-          },
-        },
+        spaceId: process.env.CONTENTFUL_SPACE_ID || "",
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || "",
       },
     },
   ],
