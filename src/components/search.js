@@ -40,14 +40,7 @@ class Search extends React.Component {
               />{" "}
               <MDBBtn color="unique"> Search </MDBBtn>
             </MDBFormInline>
-            <ul>
-              {this.state.results.map(page => (
-                <li key={page.id}>
-                  <Link to={"/" + page.path}>{page.title}</Link>
-                  {": " + page.tags.join(`,`)}
-                </li>
-              ))}
-            </ul>
+           
           </MDBCol>
           <MDBCol md="6">
             <img src={JOBS} style={{ maxWidth: "100%" }} />
