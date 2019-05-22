@@ -1,5 +1,5 @@
 require("dotenv").config()
-require("dotenv").config({
+/** require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
@@ -37,7 +37,7 @@ const queries = [
     // overrides main index name, optional
   },
 ]
-
+*/
 module.exports = {
   siteMetadata: {
     title: `Taskwit Jobs and Courses`,
@@ -93,7 +93,7 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || "",
       },
     },
-    {
+    /** {
       resolve: "gatsby-plugin-algolia",
       options: {
         appId: process.env.ALGOLIA_APP_ID,
@@ -103,5 +103,6 @@ module.exports = {
         chunkSize: 10000, // default: 1000
       },
     },
+     */
   ],
 }
