@@ -1,4 +1,43 @@
 require("dotenv").config()
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+// gatsby-config.js
+const query = `{
+  
+    allSitePage{
+      edges {
+         node {
+           
+           objectID: id
+           component
+           path
+           componentChunkName
+           jsonName
+           internal {
+             type
+             contentDigest
+             owner
+           }
+         }
+       }
+   }
+   
+   
+   
+   
+   }`
+
+const queries = [
+  {
+    query: query,
+    transformer: ({ data }) => data.allSitePage.edges.map(({ node }) => node), // optional
+    indexName: `jobs`,
+    // overrides main index name, optional
+  },
+]
+
 module.exports = {
   siteMetadata: {
     title: `Taskwit Jobs and Courses`,
@@ -7,6 +46,22 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        // CommonMark mode (default: true)
+        commonmark: true,
+        // Footnotes mode (default: true)
+        footnotes: true,
+        // Pedantic mode (default: true)
+        pedantic: true,
+        // GitHub Flavored Markdown mode (default: true)
+        gfm: true,
+        // Plugins configs
+        plugins: [],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -36,6 +91,16 @@ module.exports = {
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID || "",
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || "",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-algolia",
+      options: {
+        appId: process.env.ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_API_KEY,
+        indexName: process.env.ALGOLIA_INDEX_NAME, // for all queries
+        queries,
+        chunkSize: 10000, // default: 1000
       },
     },
   ],

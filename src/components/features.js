@@ -38,9 +38,9 @@ class Features extends Component {
                   <MDBCardTitle>COURSES</MDBCardTitle>
                   <MDBCardText>
                     Find courses, and tools that will boost your career and take
-                    yourto the next level.
+                    you to the next level.
                   </MDBCardText>
-                  <MDBBtn color="unique" href="#">
+                  <MDBBtn color="dark" href="#">
                     LEARN MORE
                   </MDBBtn>
                 </MDBCardBody>
@@ -55,7 +55,7 @@ class Features extends Component {
                     Find your dream job in Tech, Engineeering, Finance,
                     Management, Sales, Arts and development.
                   </MDBCardText>
-                  <MDBBtn href="#" color="unique">
+                  <MDBBtn href="#" color="dark">
                     BROWSE JOBS
                   </MDBBtn>
                 </MDBCardBody>
@@ -71,7 +71,7 @@ class Features extends Component {
                     options , build new skills and meet new people in our
                     modern, artistic space setting.
                   </MDBCardText>
-                  <MDBBtn href="#" color="unique">
+                  <MDBBtn href="#" color="dark">
                     LEARN MORE
                   </MDBBtn>
                 </MDBCardBody>

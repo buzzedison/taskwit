@@ -40,17 +40,18 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
     })
   }
 }
+const slash = require("slash")
+const path = require("path")
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
-  // we use the provided allContentfulBlogPost query to fetch the data from Contentful
   return graphql(
     `
       {
         allContentfulJobListing {
           edges {
             node {
-              id
+              title
               slug
             }
           }
@@ -62,15 +63,11 @@ exports.createPages = ({ graphql, actions }) => {
       if (result.errors) {
         console.log("Error retrieving contentful data", result.errors)
       }
-
-      // Resolve the paths to our template
-      const JobTemplate = path.resolve("./src/templates/myJobs.js")
-
-      // Then for each result we create a page.
+      const JobPostTemplate = path.resolve("./src/templates/myJobs.js")
       result.data.allContentfulJobListing.edges.forEach(edge => {
         createPage({
           path: `/myJobs/${edge.node.slug}/`,
-          component: slash(JobTemplate),
+          component: slash(JobPostTemplate),
           context: {
             slug: edge.node.slug,
             id: edge.node.id,

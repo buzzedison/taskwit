@@ -4,15 +4,16 @@ import "bootstrap-css-only/css/bootstrap.min.css"
 import "bootstrap/dist/css/bootstrap.css"
 import "mdbreact/dist/css/mdb.css"
 import Layout from "../components/layout"
-import Search from "../components/search"
+
 import SEO from "../components/seo"
 import Features from "../components/features"
+import Head from "../components/head"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`Jobs`, `Courses`, `Internships`]} />
     <div>
-      <Search />
+      <Head />
       <Features />
     </div>
   </Layout>

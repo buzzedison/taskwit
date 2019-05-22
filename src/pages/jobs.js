@@ -9,11 +9,13 @@ const JobListing = ({ data }) => {
   return (
     <Layout>
       <SEO title="Blog posts" />
-      <h1>{"Here's a list of all joblist!"}</h1>
+      <h1 style={{ padding: "20px", textAlign: "center" }}>
+        {"Here's a list of Jobs Available!"}
+      </h1>
       <div className="joblist">
-        {joblist.map(({ node: post }) => (
-          <div key={post.id}>
-            <Link to={`/jobs/${post.slug}`}>{post.title}</Link>
+        {joblist.map(({ node: blog }) => (
+          <div key={blog.id}>
+            <Link to={`/myJobs/${blog.slug}`}>{blog.title}</Link>
           </div>
         ))}
         <span className="mgBtm__24" />
@@ -31,15 +33,11 @@ export const query = graphql`
       edges {
         node {
           title
-          tags
-
-          childContentfulJobListingJobDescriptionRichTextNode {
-            json
-          }
-
+          slug
           companyDetails
-          salaryInGhanaCedis
-          closingDateForApplication
+          jobInfo {
+            jobInfo
+          }
         }
       }
     }
