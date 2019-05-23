@@ -10,19 +10,19 @@ import {
   MDBCol,
   MDBContainer,
 } from "mdbreact"
-import COURSES from "../images/course.jpg"
+import COURSES from "../images/courses.png"
 import FIND from "../images/find.jpg"
 import CAREER from "../images/about.jpg"
 class Features extends Component {
   render() {
     return (
-      <MDBContainer fluid style={{ backgroundColor: "lightgrey" }}>
+      <MDBContainer fluid>
         <h1
           style={{
             textAlign: "center",
             color: "black",
             fontWeight: "bold",
-            padding: "20px",
+            padding: "40px",
             textShadow: "white 1px 1px",
           }}
         >

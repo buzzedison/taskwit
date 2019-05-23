@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-
+import NetlifyForm from "react-netlify-form"
 import {
   MDBMask,
   MDBRow,
@@ -35,27 +35,66 @@ class Head extends Component {
                   <MDBBtn color="dark">FIND OUT MORE</MDBBtn>
                 </div>
                 <MDBCol md="6" xl="5" className="mb-4">
-                  <MDBCard className="dark-grey-text">
-                    <MDBCardBody className="z-depth-2">
-                      <h4 className="dark-grey-text text-center">
-                        <strong>APPLY FOR PAID INTERNSHIP:</strong>
-                      </h4>
-                      <hr />
-                      <MDBInput label="Your name" icon="user" />
-                      <MDBInput label="Your email" icon="envelope" />
-                      <MDBInput label="Your phone number" icon="phone" />
-                      <MDBInput
-                        label="Why do you want to be part of this"
-                        icon="pencil-alt"
-                        type="textarea"
-                        rows="3"
-                      />
-                      <div className="text-center mt-3 black-text">
-                        <MDBBtn color="dark">Send</MDBBtn>
-                        <hr />
+                  <NetlifyForm
+                    name="Taskwit Internship Form"
+                    onSubmit={this.handleSubmit}
+                  >
+                    {({ loading, error, success }) => (
+                      <div>
+                        {loading && <div>Loading...</div>}
+                        {error && (
+                          <div>
+                            Your information was not sent. Please try again
+                            later.
+                          </div>
+                        )}
+                        {success && (
+                          <div>
+                            <h4>
+                              Thank you for applying for our Kids Summer
+                              Program!
+                            </h4>
+                          </div>
+                        )}
+                        {!loading && !success && (
+                          <MDBCard className="dark-grey-text">
+                            <MDBCardBody className="z-depth-2">
+                              <h4 className="dark-grey-text text-center">
+                                <strong>APPLY FOR PAID INTERNSHIP:</strong>
+                              </h4>
+                              <hr />
+                              <MDBInput
+                                label="Your name"
+                                icon="user"
+                                onChange={this.handleChange}
+                              />
+                              <MDBInput
+                                label="Your email"
+                                icon="envelope"
+                                onChange={this.handleChange}
+                              />
+                              <MDBInput
+                                label="Your phone number"
+                                icon="phone"
+                                onChange={this.handleChange}
+                              />
+                              <MDBInput
+                                label="Why do you want to be part of this"
+                                icon="pencil-alt"
+                                type="textarea"
+                                rows="3"
+                                onChange={this.handleChange}
+                              />
+                              <div className="text-center mt-3 black-text">
+                                <MDBBtn color="dark">Send</MDBBtn>
+                                <hr />
+                              </div>
+                            </MDBCardBody>
+                          </MDBCard>
+                        )}
                       </div>
-                    </MDBCardBody>
-                  </MDBCard>
+                    )}
+                  </NetlifyForm>
                 </MDBCol>
               </MDBRow>
             </MDBContainer>
