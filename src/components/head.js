@@ -51,8 +51,8 @@ class Head extends Component {
                         {success && (
                           <div>
                             <h4>
-                              Thank you for applying for our Kids Summer
-                              Program!
+                              Thank you for applying for our Internship Program.
+                              We will be in touch!
                             </h4>
                           </div>
                         )}
