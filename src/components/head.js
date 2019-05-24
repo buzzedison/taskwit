@@ -50,7 +50,7 @@ class Head extends Component {
                         )}
                         {success && (
                           <div>
-                            <h4>
+                            <h4 style={{ color: "white" }}>
                               Thank you for applying for our Internship Program.
                               We will be in touch!
                             </h4>
@@ -66,27 +66,37 @@ class Head extends Component {
                               <MDBInput
                                 label="Your name"
                                 icon="user"
+                                name="name"
                                 onChange={this.handleChange}
+                                required
                               />
                               <MDBInput
                                 label="Your email"
                                 icon="envelope"
+                                name="email"
                                 onChange={this.handleChange}
+                                required
                               />
                               <MDBInput
                                 label="Your phone number"
                                 icon="phone"
+                                name="phone"
                                 onChange={this.handleChange}
+                                required
                               />
                               <MDBInput
                                 label="Why do you want to be part of this"
                                 icon="pencil-alt"
                                 type="textarea"
                                 rows="3"
+                                name="message"
                                 onChange={this.handleChange}
+                                required
                               />
                               <div className="text-center mt-3 black-text">
-                                <MDBBtn color="dark">Send</MDBBtn>
+                                <MDBBtn color="dark" type="submit">
+                                  Send
+                                </MDBBtn>
                                 <hr />
                               </div>
                             </MDBCardBody>
