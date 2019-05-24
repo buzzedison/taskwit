@@ -22,10 +22,10 @@ class Head extends Component {
             className="d-flex justify-content-center align-items-center"
             overlay="indigo-strong"
           >
-            <MDBContainer>
+            <MDBContainer style={{ paddingBottom: "160px" }}>
               <MDBRow>
                 <div className="white-text text-center text-md-left col-md-6 mt-xl-5 mb-5">
-                  <h1 className="display-4 font-weight-bold">Jobs, Courses</h1>
+                  <h1 className="display-4 font-weight-bold"style={{ paddingTop: "40px" }}>Jobs, Courses</h1>
                   <hr className="hr-light" />
                   <h6 className="mb-4">
                     Get a dream job, improve your career by taking our courses,
@@ -57,7 +57,10 @@ class Head extends Component {
                           </div>
                         )}
                         {!loading && !success && (
-                          <MDBCard className="dark-grey-text">
+                          <MDBCard
+                            className="dark-grey-text"
+                            style={{ paddingBottom: "50px" }}
+                          >
                             <MDBCardBody className="z-depth-2">
                               <h4 className="dark-grey-text text-center">
                                 <strong>APPLY FOR PAID INTERNSHIP:</strong>
@@ -88,7 +91,7 @@ class Head extends Component {
                                 label="Why do you want to be part of this"
                                 icon="pencil-alt"
                                 type="textarea"
-                                rows="3"
+                                rows="2"
                                 name="message"
                                 onChange={this.handleChange}
                                 required
@@ -111,10 +114,10 @@ class Head extends Component {
           </MDBMask>
         </MDBView>
 
-        <MDBContainer>
+        <MDBContainer style={{ paddingTop: "80px" }}>
           <MDBRow className="py-5">
             <MDBCol md="12" className="text-center">
-              <h2 className="black-text text-center strong"style={{paddingTop:'30px'}}>
+              <h2 className="black-text text-center strong">
                 <strong>
                   Let us help you find the right people for your organization.
                 </strong>
