@@ -114,7 +114,7 @@ class Head extends Component {
         <MDBContainer>
           <MDBRow className="py-5">
             <MDBCol md="12" className="text-center">
-              <h2 className="black-text text-center strong">
+              <h2 className="black-text text-center strong"style={{paddingTop:'30px'}}>
                 <strong>
                   Let us help you find the right people for your organization.
                 </strong>
