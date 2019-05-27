@@ -2,7 +2,7 @@
  * Implement Gatsby's Node APIs in this file.
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+
 
 // You can delete this file if you're not using it
 
@@ -28,7 +28,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
      * during the build. (See `src/utils/auth.js` to see how we prevent this
      * from breaking the app.)
      */
-    actions.setWebpackConfig({
+/** actions.setWebpackConfig({
       module: {
         rules: [
           {
@@ -40,6 +40,8 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
     })
   }
 }
+
+*/
 /** const slash = require("slash")
 const path = require("path")
 
