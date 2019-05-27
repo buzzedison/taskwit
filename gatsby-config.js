@@ -3,7 +3,7 @@ require("dotenv").config()
 
 
 
-*/
+
 module.exports = {
   siteMetadata: {
     title: `Taskwit Jobs and Courses`,
