@@ -22,7 +22,7 @@ class Head extends Component {
             className="d-flex justify-content-center align-items-center"
             overlay="indigo-strong"
           >
-            <MDBContainer style={{ paddingBottom: "160px" }}>
+            <MDBContainer style={{ paddingBottom: "170px" }}>
               <MDBRow>
                 <div className="white-text text-center text-md-left col-md-6 mt-xl-5 mb-5">
                   <h1 className="display-4 font-weight-bold"style={{ paddingTop: "40px" }}>Jobs, Courses</h1>
