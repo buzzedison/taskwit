@@ -1,42 +1,8 @@
 require("dotenv").config()
-/** require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
 
-// gatsby-config.js
-const query = `{
-  
-    allSitePage{
-      edges {
-         node {
-           
-           objectID: id
-           component
-           path
-           componentChunkName
-           jsonName
-           internal {
-             type
-             contentDigest
-             owner
-           }
-         }
-       }
-   }
-   
-   
-   
-   
-   }`
 
-const queries = [
-  {
-    query: query,
-    transformer: ({ data }) => data.allSitePage.edges.map(({ node }) => node), // optional
-    indexName: `jobs`,
-    // overrides main index name, optional
-  },
-]
+
+
 */
 module.exports = {
   siteMetadata: {

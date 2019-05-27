@@ -79,3 +79,5 @@ exports.createPages = ({ graphql, actions }) => {
       console.log("Error retrieving contentful data", error)
     })
 }
+
+//test
