@@ -40,7 +40,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
     })
   }
 }
-const slash = require("slash")
+/** const slash = require("slash")
 const path = require("path")
 
 exports.createPages = ({ graphql, actions }) => {
@@ -80,4 +80,5 @@ exports.createPages = ({ graphql, actions }) => {
     })
 }
 
-//test
+//testing
+*/
