@@ -1,9 +1,5 @@
 require("dotenv").config()
 
-
-
-
-
 module.exports = {
   siteMetadata: {
     title: `Taskwit Jobs and Courses`,
@@ -56,8 +52,8 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: process.env.CONTENTFUL_SPACE_ID || "",
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || "",
+        spaceId: `2za11qzfnvc9`,
+        accessToken: `d8SpYQZI6HuVHw6JTe-38GkxB0NcygT2fKkkanGh64U`,
       },
     },
     /** {
