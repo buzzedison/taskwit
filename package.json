@@ -37,7 +37,7 @@
     "react-netlify-form": "^2.1.5",
     "reactstrap": "^8.0.0",
     "rich-text-to-react": "^1.0.1",
-    "sharp": "^0.22.1",
+    "sharp": "^0.30.5",
     "styled-components": "^4.2.0",
     "styled-icons": "^7.15.1"
   },
